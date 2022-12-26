@@ -43,7 +43,16 @@
   }];
   [specs insertObject:[%c(PSSpecifier) emptyGroupSpecifier] atIndex:0];
   NSMutableArray *mutableSpecifiers = [%orig mutableCopy];
-  [mutableSpecifiers addObjectsFromArray:specs];
+
+  NSUInteger index;
+
+  index = 2;
+  for ( id item in specs )
+  {
+      [mutableSpecifiers insertObject:item atIndex:index];
+      index++;
+  }
+  //[mutableSpecifiers addObjectsFromArray:specs];
   MSHookIvar<NSArray *>(self, "_specifiers") = mutableSpecifiers;
   return mutableSpecifiers;
 }

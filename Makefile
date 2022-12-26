@@ -1,6 +1,5 @@
-ARCHS = armv7 arm64 arm64e
-#ARCHS = arm64
-TARGET = iphone:clang:14.4:7.0
+export ARCHS = arm64 arm64e
+export TARGET = iphone:clang:14.4:7.0
 
 DEBUG = 0
 FINALPACKAGE = 1
